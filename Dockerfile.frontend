@@ -75,15 +75,5 @@ COPY --chown=node:node --from=builder ["/srv/app/package*.json", "./"]
 COPY --chown=node:node --from=builder ["/srv/app/entrypoint.sh", "./entrypoint.sh"]
 COPY --chown=node:node --from=builder ["/srv/app/public", "./public"]
 
-############################################
-# Adjust permissions for non-root user
-############################################
-# Switch to root user to adjust permissions
-USER root
-
-# Add non-root user to the root group and grant group write permissions
-RUN chgrp -R 0 /srv/app && \
-    chmod -R g=u /srv/app
-
 # Switch back to non-root user
 USER node
