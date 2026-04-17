@@ -22,7 +22,7 @@ spec:
               protocol: TCP
           env:
             - name: BACKEND_URL
-              value: https://counter-backend-abc123.apps.ocp4.mcit.ch
+              value: https://counter-backend-264495-corleu.apps.exoscale-ch-gva-2-0.appuio.cloud
             - name: NAMESPACE
               valueFrom:
                 fieldRef:
